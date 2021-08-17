@@ -1,0 +1,110 @@
+Conditional Terminology
+
+var isTrue = true;
+
+if(isTrue) {
+	console.log('yes');
+} else {
+	console.log('no');
+}
+
+output: yes
+
+var day = new Date().getDay();
+
+if(day === 0) {
+	console.log('Sunday');
+} else if (day === 1) {
+	console.log('Monday');
+} else if (day === 2) {
+	console.log('Tuesday');
+} else if (day === 3) {
+	console.log('Wednesday');
+} else if (day === 4) {
+	console.log('Thursday');
+} else if (day === 5) {
+	console.log('Friday');
+} else if (day === 6) {
+	console.log('Saturday');
+} else {
+	console.log('Invalid Day');
+}
+output: Tuesday
+
+switch(day){
+    case 0:
+      //statements to execute
+      console.log('Sunday');
+      break;
+    case 1:
+      console.log('Monday');
+      break;
+    case 2:
+      console.log('Tuesday');
+      break;
+    case 3:
+      console.log('Wednesday');
+      break;
+    case 4:
+      console.log('Thursday');
+      break;
+    case 5:
+      console.log('Friday');
+      break;
+    case 6:
+      console.log('Saturday');
+      break;
+    default:
+      console.log('Invalid Day');
+      break;
+}
+
+ternery operator: 
+
+var isTrue = true;
+
+//if(isTrue) {
+//	console.log('yes');
+//} else {
+//	console.log('no');
+//}
+
+
+var yesOrno= isTrue?'yes':'no';
+
+console.log(yesOrno);
+
+Short Circuit Evaluation:
+Logical operators can be used to control program flow directly. 
+//console.log(3===3 && false && 'chicken');
+//output: false
+//console.log(3===3 && true && 'chicken');
+//output: chicken
+//JS interprets results from left
+//if it is true prints right
+
+
+//console.log(3===3 || 'cow' || 'chicken');
+//output: true
+//console.log(3===4 || 'cow' ||chicken');
+//output: cow
+//JS interprets results from left 
+
+
+
+//function isAdult(age) {
+//  //short circuit statement
+//  return age &&age>=18;
+//  //returns true to console if >=18
+//}
+
+
+function countToFive(start=1){
+ // start=start ||1; <- returns 1 if no value is passed
+  for(var i=start; i<=5; i++){
+    console.log(i);
+  }
+}
+
+countToFive();
+//it can't be used for 0 so use default value instead
